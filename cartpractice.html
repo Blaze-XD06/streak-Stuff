@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Variable P</title>
+    </head>
+    <body>
+        <p>Cart Quantity</p>
+        <button onclick="console.log(`Cart quantity: ${Quantity}`);">Show Quantity</button>
+        <button onclick="updateCart(1)">Add to Cart</button>
+        <button onclick="updateCart(2)">+2</button>
+        <button onclick="updateCart(3)">+3</button>
+        <button onclick="updateCart(4)">+4</button>
+        <button onclick="updateCart(5)">+5</button>
+        <button onclick="cartReset()">Reset Cart</button>
+        <button onclick="updateCart(-1)">Remove 1 from cart</button>
+        <button onclick="updateCart(-2)">Remove 2 from cart</button>
+        <button onclick="updateCart(-3)">Remove 3 from cart</button>
+
+        <script>
+            let Quantity = 0;
+
+            function updateCart(amount) {
+                Quantity += amount;
+                if (Quantity >= 10) {
+                    console.log(`Cart is full`);
+                }
+                if (Quantity < 0) {
+                    Quantity = 0;
+                }
+                console.log(`Cart Quintity: ${Quantity}`)
+            }
+            function cartReset () {
+                Quantity = 0;
+            }
+        </script>
+    </body>
+</html>
